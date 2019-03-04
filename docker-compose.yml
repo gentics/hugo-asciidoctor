@@ -1,0 +1,11 @@
+version: "3.4"
+
+services:
+  portal:
+    image: &image-name gentics/hugo-asciidoctor:${DOCKER_TAG:-latest}
+    build:
+      dockerfile: Dockerfile
+      context: .
+      network: host
+      cache_from:
+        - *image-name
